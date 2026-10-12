@@ -1,0 +1,127 @@
+#loading-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 10000;
+}
+
+#loading-text {
+  display: block;
+  position: absolute;
+  top: 47%;
+  left: 47%;
+  color: #000;
+  width: 150px;
+  height: 30px;
+  margin: -7px 0 0 -45px;
+  text-align: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 15px;
+}
+#loading-text_new {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #000;
+  width: 100px;
+  height: 30px;
+  margin: -7px 0 0 -45px;
+  text-align: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 20px;
+}
+
+#loading-content {
+  display: block;
+  position: relative;
+  left: 48.5%;
+  top: 46%;
+  width: 190px;
+  height: 190px;
+  font-size: 0.1rem;
+  margin: -85px 0 0 -85px;
+  border: 3px solid #147D76;
+}
+
+#loading-content:after {
+  content: "";
+  position: absolute;
+  border: 3px solid #0f0;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  bottom: 15px;
+}
+
+#loading-content:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #00f;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+}
+
+#loading-content {
+  border: 3px solid transparent;
+  border-top-color: #231e28;
+  border-bottom-color: #231e28;
+  border-radius: 50%;
+  -webkit-animation: loader 2s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 2s linear infinite;
+}
+
+#loading-content:before {
+  border: 3px solid transparent;
+  border-top-color: rgb(0, 255, 128);
+  border-bottom-color: rgb(0, 255, 76);
+  border-radius: 50%;
+  -webkit-animation: loader 3s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+  animation: loader 3s linear infinite;
+}
+
+#loading-content:after {
+  border: 3px solid transparent;
+  border-top-color: #147D76;
+  border-bottom-color: #147D76;
+  border-radius: 50%;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+  -moz-animation: loader 2s linear infinite;
+  -o-animation: loader 2s linear infinite;
+}
+
+@-webkit-keyframes loaders {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

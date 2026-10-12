@@ -1,0 +1,67 @@
+llm:
+  type: ""
+  model: ""
+  api_key: ""
+
+agents:
+  - name: ""
+    agent_description: ""
+    tools:
+      - tool_name: ""
+        type: ""
+        config:
+          url: ""
+          tool_description: ""
+          tool_body: |
+            from llm_model import initialize_llm
+            import requests
+            def <tool_name>(input_data:str)->str:
+              try:
+                prompt = "<custom_prompt>"
+                resp = initialize_llm().invoke(prompt+input_data)
+                return resp
+              except Exception as e:
+                return str(e)
+          prompt: ""
+        - "Next tool if needed"
+    instructions: ""
+
+  - name: ""
+    agent_description: ""
+    tools:
+      - tool_name: ""
+        type: ""
+        config:
+          url: ""
+          tool_description: ""
+          tool_body: |
+            from llm_model import initialize_llm
+            import requests
+            def <tool_name>(input_data:str)->str:
+              try:
+                prompt = "<custom_prompt>"
+                resp = initialize_llm().invoke(prompt+input_data)
+                return resp
+              except Exception as e:
+                return str(e)
+          prompt: ""
+        - "Next tool if needed"
+    instructions: ""
+
+    and so on...
+
+workflow:
+  name: Workflow
+  nodes:
+    - name: Agent_1
+      type: agent
+      next:
+        - Agent_2
+    - name: Agent_2
+      type: agent
+      agent: Agent_3
+    and so on...
+
+settings:
+  max_iterations: 15
+  error_handling: "retry_twice_then_fail"

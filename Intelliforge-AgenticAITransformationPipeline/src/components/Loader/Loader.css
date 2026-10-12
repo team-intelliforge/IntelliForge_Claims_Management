@@ -1,0 +1,75 @@
+/* Parent container should have: position: relative; */
+
+#loading-wrapper {
+  position: relative; /* or relative if needed */
+  /* inset: 0; optional: fills parent */
+  background-color: #f9f9f9;
+  z-index: 10000;
+  margin-top: 45vh;
+  margin-left:-10vw;
+}
+
+/* Center text and spinner using Flexbox */
+#loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-text,
+#loading-text_new {
+  color: #2563EB;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+#loading-content {
+  width: 200px;
+  height: 200px;
+  border: 3px solid transparent;
+  border-top-color: #231e28;
+  border-bottom-color: #231e28;
+  border-radius: 50%;
+  animation: loader 2s linear infinite;
+  position: absolute;
+}
+
+#loading-content::before,
+#loading-content::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+#loading-content::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 3px solid transparent;
+  border-top-color: #EEF4FF;
+  border-bottom-color: #EEF4FF;
+  animation: loader 3s linear infinite;
+}
+
+#loading-content::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 3px solid transparent;
+  border-top-color: #2563EB;
+  border-bottom-color: #2563EB;
+  animation: loader 1.5s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
